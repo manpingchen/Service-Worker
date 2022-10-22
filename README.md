@@ -5,6 +5,7 @@ This is a Service Worker-controlled and site-wise cached example.
 * Offline Read
 * Cache the site
 * Network first and Cache
+* Delete the old cache
 
 main.js file
 ```
