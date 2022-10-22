@@ -2,9 +2,9 @@
  
 This is a Service Worker-controlled and site-wise cached example.
 
-*Offline Read
-*Cache the site
-*Network first and Cache
+* Offline Read
+* Cache the site
+* Network first and Cache
 
 main.js file
 ```
