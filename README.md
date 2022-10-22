@@ -8,7 +8,7 @@ This is a Service Worker-controlled and site-wise cached example.
 * Delete the old cache
 
 main.js file
-```
+```javascript
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
@@ -21,7 +21,7 @@ if ("serviceWorker" in navigator) {
 ```
 
 sw.js
-```
+```javascript
 const cacheName = "v2";
 
 // Call Install event
