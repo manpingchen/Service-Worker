@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <title>Service Worker</title>
+  </head>
+  <body>
+    <header><h1>Service Worker</h1></header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">What Is Service Worker</a></li>
+        <li class="current"><a href="life-cycle.html">Life Cycle</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section>
+        <h2>Registration & Download</h2>
+        <blockquote
+          cite="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API"
+        >
+          <p>
+            A service worker is first registered using the
+            <code>ServiceWorkerContainer.register()</code> method. If
+            successful, your service worker will be downloaded to the client and
+            attempt installation/activation (see below) for URLs accessed by the
+            user inside the whole origin, or inside a subset specified by you.
+          </p>
+        </blockquote>
+      </section>
+
+      <section>
+        <h2>Install</h2>
+        <blockquote
+          cite="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API"
+        >
+          <p>
+            The service worker is immediately downloaded when a user first
+            accesses a service worker–controlled site/page.
+          </p>
+
+          <p class="flex-align-center bold">
+            <span class="material-symbols-outlined"> update </span>
+            After that, it is updated when:
+          </p>
+          <ul>
+            <li>A navigation to an in-scope page occurs.</li>
+            <li>
+              An event is fired on the service worker and it hasn't been
+              downloaded in the last 24 hours.
+            </li>
+          </ul>
+          <p>
+            Installation is attempted when the downloaded file is found to be
+            new — <br />either different to an existing service worker
+            (byte-wise compared), the first service worker encountered for this
+            page/site.
+          </p>
+        </blockquote>
+        <p>
+          The install event of the
+          <strong>ServiceWorkerGlobalScope</strong> interface is fired when a
+          <strong>ServiceWorkerRegistration</strong> acquires a new
+          ServiceWorkerRegistration.installing worker.
+        </p>
+      </section>
+
+      <section>
+        <h2>Activate</h2>
+        <blockquote
+          cite="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API"
+        >
+          <p>
+            If this is the first time a service worker has been made available,
+            installation is attempted, then after a successful installation, it
+            is activated.
+          </p>
+          <p>
+            If there is an existing service worker available, the new version is
+            installed in the background, but not yet activated — at this point
+            it is called the worker in waiting.<br />
+            It is only activated when there are no longer any pages loaded that
+            are still using the old service worker. As soon as there are no more
+            pages to be loaded, the new service worker activates (becoming the
+            active worker).
+          </p>
+          <p>
+            Activation can happen sooner using
+            <code>ServiceWorkerGlobalScope.skipWaiting()</code> and existing
+            pages can be claimed by the active worker using
+            <code>Clients.claim()</code>.
+          </p>
+        </blockquote>
+      </section>
+    </main>
+
+    <footer>
+      Reference:
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API"
+        target="_blank"
+        >Service_Worker_API</a
+      >
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
