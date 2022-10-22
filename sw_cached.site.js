@@ -1,25 +1,8 @@
-const cacheName = "v1";
-
-const cacheAssets = [
-  "index.html",
-  "life-cycle.html",
-  "/css/style.css",
-  "/js/main.js",
-];
+const cacheName = "v2";
 
 // Call Install event
 self.addEventListener("install", (e) => {
   console.log("SW Installed");
-
-  e.waitUntil(
-    caches
-      .open(cacheName)
-      .then((cache) => {
-        console.log("SW Caching Files");
-        cache.addAll(cacheAssets);
-      })
-      .then(() => self.skipWaiting())
-  );
 });
 
 // Call Activate event
@@ -48,8 +31,18 @@ self.addEventListener("fetch", (e) => {
 
   e.respondWith(
     // if there isnt a connection, fetch will fail
-    fetch(e.request).catch(() => {
-      cache.match(e.request);
-    })
+    fetch(e.request)
+      .then((res) => {
+        // Make copy/clone of response
+        const resClone = res.clone();
+
+        // Open cache
+        caches.open(cacheName).then((cache) => {
+          // Add response to cache
+          cache.put(e.request, resClone);
+        });
+        return res;
+      })
+      .catch((err) => caches.match(e.request).then((res) => res))
   );
 });
