@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  padding: 5%;
+}
+
+header {
+  width: 100%;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  background: white;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+footer a {
+  color: black;
+}
+
+nav {
+  width: 100%;
+  margin: 2rem 0;
+  position: sticky;
+  top: 0;
+}
+
+nav ul {
+  list-style: none;
+  margin-left: 0;
+  display: flex;
+  gap: 0.5rem;
+}
+
+nav ul li {
+  padding: 0.5rem;
+  transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
+  background: white;
+}
+
+nav ul li a {
+  color: black;
+  font-weight: bold;
+}
+
+nav ul li.current {
+  background: #e2f0f3;
+}
+
+nav ul li:hover:not(.current) {
+  background: #eef6f7;
+}
+
+main {
+  margin: 0 auto;
+}
+
+main p {
+  margin-bottom: 1rem;
+}
+
+blockquote {
+  padding: 1rem;
+  background: #f3f6f7ab;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  border-left: 5px solid #bcecf2;
+}
+
+main ul {
+  list-style: gujarati;
+  margin-left: 20px;
+}
+
+main section {
+  margin-bottom: 3rem;
+}
+
+main section h2 {
+  margin-bottom: 1rem;
+}
+
+code {
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  background: #f0f0f0;
+  font-family: revert;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+blockquote ul {
+  margin-left: 3rem;
+}
+
+blockquote ul:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+/* Alignment */
+.flex-align-center {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

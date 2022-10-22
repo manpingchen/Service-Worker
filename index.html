@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Service Worker</title>
+  </head>
+  <body>
+    <header><h1>Service Worker</h1></header>
+    <nav>
+      <ul>
+        <li class="current"><a href="index.html">What Is Service Worker</a></li>
+        <li><a href="life-cycle.html">Life Cycle</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <h2>What Is Service Worker?</h2>
+      <p>Here is a quote from MDN</p>
+      <blockquote
+        cite="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API"
+      >
+        Service workers essentially act as proxy servers that sit between web
+        applications, the browser, and the network (when available). They are
+        intended, among other things, to enable the creation of effective
+        offline experiences, intercept network requests and take appropriate
+        action based on whether the network is available, and update assets
+        residing on the server. They will also allow access to push
+        notifications and background sync APIs.
+      </blockquote>
+      <ul>
+        <li>
+          A service worker is an event-driven worker registered against an
+          origin and a path
+        </li>
+        <li>
+          A service worker is run in a worker context: it therefore has no DOM
+          access, and runs on a different thread to the main JavaScript that
+          powers your app, so it is non-blocking.
+        </li>
+        <li>Service workers only run over HTTPS, for security reasons.</li>
+      </ul>
+    </main>
+
+    <footer>
+      Reference:
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API"
+        target="_blank"
+        >Service_Worker_API</a
+      >
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
