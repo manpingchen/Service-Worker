@@ -67,3 +67,5 @@ self.addEventListener("fetch", (e) => {
 });
 
 ```
+
+Learning Reference: https://www.youtube.com/watch?v=ksXwaWHCW6k
